@@ -120,12 +120,12 @@ body{
 }
 #guess-count, #question-count, #answers{
     font-family: Jacoby;
-    color: #094f8f;
+    color: #d3232c;
 }
 #guess-count > span, #question-count > span, #answers > span{
     justify-content: right;
-    color:red;
-    font-family: Montserrat;
+    color: black;
+    /* font-family: Montserrat; */
 }
 #answers{
     text-align: center;
@@ -149,7 +149,7 @@ body{
     border-radius: 5px;
    /*  */
     overflow: auto;
-    height: 40%;
+    height: 30%;
 }
 .questions::-webkit-scrollbar {
     width: 5px;
@@ -180,6 +180,7 @@ body{
     /* border: solid black 2px; */
     width: 17%;
     height: 175px;
+    cursor: pointer;
     margin-right: .5%;
     flex-direction: column;
     border-radius: 5px;
@@ -232,7 +233,7 @@ body{
     /* flex-wrap: wrap; */
 }
 .question:nth-child(odd){
-    background-color: #ededed;
+    background-color: #f1f1f1;
 
 }
 .ask{
@@ -245,6 +246,7 @@ body{
 
 button{
     border-color: transparent;
+    cursor: pointer;
     background-color: #094f8f;
     color: #d3232c;
     font-family: Jacoby;
