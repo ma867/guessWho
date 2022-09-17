@@ -24,4 +24,4 @@ At any point, you can guess which Chris it is, but careful, because you only hav
 * The second step involved creating quick wireframes for the look of the board and the flow. After the sketches were done, I proceeded to create the barebones HTML and CSS for the board.
 ![wireframes](https://i.imgur.com/wBEJLWn.jpg)
 
-* Lastly, I began implemented the JS code for manipulating the DOM as well as began adding CSS styling to make it more user friendly. This was an iterative step.
+* Lastly, I began implementing the JS code for manipulating the DOM as well as adding CSS styling to make it more user friendly. This was an iterative step.
