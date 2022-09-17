@@ -17,10 +17,10 @@ At any point, you can guess which Chris it is, but careful, because you only hav
 
 ### Design Approach
 * The first step after deciding on my game was to have a design concept in terms of the players, character amount, character atributes , and the list of characters on the board.
-  * Players: I decided on two players, and made one of the players the computer.
-  * Character Amount: I decided on having 24 Chris characters just like the real-life board-game.
-  * Character Attributes: Because there was a need to control the question input for the player,I decided to provide questions myself. To create the questions, I settled on four attributes: sex (male/female), ethnicity, hair-color, and profession.
-  * Character List: Based on the attributes, I began researching celebrities that were varied enough.
+  * **Players:** I decided on two players, and made one of the players the computer.
+  * **Character Amount:** I decided on having 24 Chris characters just like the real-life board-game.
+  * **Character Attributes:** Because there was a need to control the question input for the player,I decided to provide questions myself. To create the questions, I settled on four attributes: sex (male/female), ethnicity, hair-color, and profession.
+  * **Character List:** Based on the attributes, I began researching celebrities that were varied enough.
 * The second step involved creating quick wireframes for the look of the board and the flow. After the sketches were done, I proceeded to create the barebones HTML and CSS for the board.
 ![wireframes](https://i.imgur.com/wBEJLWn.jpg)
 
