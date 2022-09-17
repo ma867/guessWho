@@ -15,9 +15,11 @@ const tutorial = document.querySelector("#modal-textbox")
 const chrises = document.querySelectorAll(".square")
 const askButtons = document.querySelectorAll(".ask button")
 const answers = document.querySelector("#answers > span")
+const makeGuessBtn = document.getElementById("make-guess")
+const cancelBtn = document.getElementById("cancel-guess")
 
-console.log(guessCounter,questionCounter)
 
+console.log(makeGuessBtn)
 
 /* ======================
 CLASSES
@@ -104,7 +106,7 @@ const startTutorial = () => {
 const startGame = () => {
     console.log("bitchhh")
     setupGame()
-    console.log(chrises)
+    // console.log(chrises)
    
 
 }
@@ -120,8 +122,51 @@ const randomizeChris = () =>{
     return  chrisList[Math.floor(Math.random() * 24)];
 }
 
+const makeGuess = () => {
+    
+    cancelBtn.style.display = "block"
+    chrises.forEach((chris) =>{
 
+        let chrisLastName = chris.querySelector(".name")
 
+        if(player.currentChrises.includes(chris.id)){
+            console.log("this chris is emotionally available")
+            chris.addEventListener('mouseenter', function (){
+                chrisLastName.style.backgroundColor = "#094f8f"
+                chrisLastName.style.color = "aliceblue"
+           })  
+           chris.addEventListener('mouseleave', function (){
+            chrisLastName.style.backgroundColor = "aliceblue"
+            chrisLastName.style.color = "#094f8f"
+       })
+            
+        }
+        else{
+            chrisLastName.style.backgroundColor = "#c7c7c7"
+            chris.style.backgroundColor = "#c7c7c7"
+        }
+ 
+    })
+}
+
+const cancelGuess = () => {
+    
+    cancelBtn.style.display = "none"
+    chrises.forEach((chris) =>{
+
+        let chrisLastName = chris.querySelector(".name")
+   
+        if(player.currentChrises.includes(chris.id)){
+            console.log("this chris is emotionally available")
+
+        }
+        else{
+            chrisLastName.style.backgroundColor = "#d3232c"
+            chris.style.backgroundColor = "#d3232c"
+        }
+
+    })
+}
 /* =============================
 EVENT LISTENERS
 ============================= */
@@ -130,6 +175,9 @@ getStartedBtn.addEventListener("click", startTutorial)
 
 startGameBtn.addEventListener("click", startGame)
 
+makeGuessBtn.addEventListener("click", makeGuess)
+
+cancelBtn.addEventListener("click", cancelGuess)
 
 
 chrises.forEach((chris) =>{

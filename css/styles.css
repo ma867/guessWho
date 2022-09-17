@@ -279,6 +279,13 @@ button{
 
 
 }
+#cancel-guess{
+    background-color:#d3232c;
+    color: white;
+    text-shadow: none;
+    display: none;
+
+}
 .start{
     height: 15%;
     width: 95%;
