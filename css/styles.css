@@ -9,9 +9,25 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 /* .board{
-    display: none;
+    border: solid black 2px;
     
 } */
+
+
+.instruction{
+
+    counter-reset: my-awesome-counter;
+  }
+.instruction p {
+    counter-increment: my-awesome-counter;
+  }
+.instruction p::before {
+    content: counter(my-awesome-counter) ". ";
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Jacoby;
+  }
 .welcome{
     
     /* border: solid black 2px; */
@@ -35,6 +51,25 @@ body{
   
     justify-content: center;
 }
+.updates{
+  
+    /* border: solid black 2px; */
+  
+    justify-content: center;
+}
+.modal-background{
+    display: none;
+	background-color: rgba(0, 0, 0, 0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	/*This puts our modal in front of the body (which has a default z-index setting of `0`*/
+	overflow: auto;
+
+}
 .titles{
     font-family: Jacoby;
     color: #094f8f;
@@ -52,13 +87,13 @@ body{
 
 
 
-#modal-textbox {
+#modal-textbox{
     display: none;
   border: 20px solid white;
   background-color: white;
   box-shadow: 0px 0px 2px 2px #00222222;
-  height: 560px;
-  width: 50%;
+  height: 100%;
+  width: 70%;
 
   justify-content: center;
   /* border: solid black 2px; */
@@ -70,6 +105,53 @@ body{
   /* padding: 5%; */
   text-align: center;
 }
+
+#updates-textbox, #try-textbox{
+    /* display: none; */
+    /* border: 2px solid black; */
+    background-color: white;
+    box-shadow: 0px 0px 2px 2px #00222222;
+    width: 50%;
+    position: fixed; /* or absolute */
+    top: 20%;
+    left: 25%;
+    right: 25%;
+    /* margin-top: -50px;
+    margin-left: -100px; */
+    /* justify-content: center; */
+    /* border: solid black 2px; */
+    /* margin: 150px auto; */
+    border-radius: 5px;
+    /*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally).*/
+    
+    /*This will give the box some depth.*/
+    /* padding: 5%; */
+    text-align: center;
+
+}
+#updates-textbox{
+    height: 60%;
+    display: none;
+}
+#try-textbox{
+    height: 40%;
+    display: none;
+
+}
+#score-total{
+    font-size: 30px;
+    font-family: Jacoby;
+}
+
+#close-modal{
+    text-align: right;
+    padding: 5px;
+    color: #d3232c;
+    font-size: 20px;
+    font-family: Jacoby;
+    cursor: pointer;
+}
+
 
 
 #chris-board,#game-controls{
@@ -131,6 +213,9 @@ body{
     text-align: center;
     padding-top: 2%;
     height: 4%;
+}
+.no-click{
+    pointer-events: none;
 }
 
 .questions{
@@ -304,7 +389,7 @@ button{
     color: #d3232c;
 
 }
-#start-game{
+#start-game,#play-again{
     width: 95%;
     height: 10%;
     border-radius: 5px;
@@ -314,4 +399,19 @@ button{
     color: #d3232c;
     font-family: Jacoby;
     font-size: 30px;
+}
+#result-title{
+    color: #d3232c;
+    font-family: Jacoby;
+    font-size: 40px;
+}
+#score-number{
+    color: #094f8f;
+    font-family: Jacoby;
+    font-size: 50px;
+
+}
+#score-text{
+    font-size: 20px;
+
 }

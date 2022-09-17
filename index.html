@@ -23,11 +23,56 @@
     <div class="instructions container">
         <div id="modal-textbox">
             <div id="tutorial-title">How to play:</div>
+            <p>Welcome to Guess Who? Chris, Cris, or Kris Edition! Just like the real life board-game,
+                your job is to find out which Chris we are thinking of!
+            </p>
+            <div class="instruction">
+                <p>
+                    You will be given a set of questions that you can ask. you can do so by clicking on
+                     any of the questions in the "Ask a question!" panel. Just click on the "?" button, and
+                     we will give you the answer. <br/>
+                    You may ask as many questions as you would like, but the least you ask, the better your score!
+                </p>
+                <p>
+                    Just like in the board-game, you can eliminate Chris's from the board! Just go to the desired Chris,
+                    and double-click on his/her card. If you wish to add the desired Chris back, just double-click again 
+                    on the respective card <br/>
+                </p>
+                <p>
+                    You can make a guess at any point of the game! Just click on the "Guess Who?" button on the 
+                    right panel, and click on your desired Chris.<br/>
+                    
+
+                    If you would like to keep asking questions and not make the guess, you can simply click on the 
+                    "Cancel" button on the right panel.<br/>
+                    
+                    BUT THERE IS A CATCH!<br/>
+                    
+                    You only have 3 chances to guess. If you fail 3 times, you lose the game!
+                    
+                </p>
+            </div>
             <button id="start-game">Start the game</button>
         </div>
-
     </div>
-    <div class="board container">
+
+    <div class="modal-background">
+        <div id="try-textbox">
+            <div id="close-modal">X</div>
+            <div id="try-title">Wrong guess.<br/> Try again!</div>
+    
+        </div>
+        <div id="updates-textbox">
+            <div id="score-total">
+                <div id="result-title"></div>
+                <div id="score-number"></div>
+                <div id="stars"></div>
+                <div id="score-text"></div>   
+                <button id="play-again">Play Again!</button>
+            </div>
+        </div>
+    </div>
+    <div class="board container">  
         <div id="chris-board" class="container">
             <div class="row container">
                 <div class="square container" id="hemsworth">

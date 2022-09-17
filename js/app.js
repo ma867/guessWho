@@ -18,6 +18,15 @@ const answers = document.querySelector("#answers > span")
 const makeGuessBtn = document.getElementById("make-guess")
 const cancelBtn = document.getElementById("cancel-guess")
 
+const resultTitle = document.getElementById("result-title")
+const scoreNumber = document.getElementById("score-number")
+const scoreText = document.getElementById("score-text")
+const stars = document.getElementById("stars")
+const playAgain = document.getElementById("play-again")
+const closeTryModal = document.getElementById("close-modal")
+const tryModal = document.getElementById("try-textbox")
+const updatesModal = document.getElementById("updates-textbox")
+const modalBackground = document.querySelector(".modal-background")
 
 console.log(makeGuessBtn)
 
@@ -56,11 +65,51 @@ class Player{
         this.questionCount++
         questionCounter.textContent = this.questionCount
     }
+    win(){
+        resultTitle.textContent = "Congrats! You won!"
+        scoreText.textContent =  "You sure know your Chris's"
+        this.checkScore()
+        this.checkStars()
+        modalBackground.style.display = "block"
+        updatesModal.style.display = "block"
+    }
+    lose(){
+        resultTitle.textContent = "You Lost"
+        scoreText.textContent =  "Better luck next time."
+        this.checkScore()
+        this.checkStars()
+        modalBackground.style.display = "block"
+        updatesModal.style.display = "block"
+
+    }
+    checkScore(){
+        scoreNumber.textContent = this.questionCount * 1000
+        
+
+    }
+    checkStars(){
+        if(this.questionCount < 5){
+            
+            stars.textContent = "★★★"
+        }
+        else if(this.questionCount >=5 && this.questionCount<=10){
+            stars.textContent = "★★☆"
+        }
+        else if(this.questionCount >=11 && this.questionCount<=15){
+            stars.textContent = "★☆☆"
+        }
+        else{
+            stars.textContent = "☆☆☆"
+        }
+    }
+
+    
 }
 /* ======================
 GLOBAL VARS
 =========================*/
 let computedChris = ""
+
 let player = new Player()
 const chrisList = [
     new Chris("hemsworth", "male", true, ["actor"], "caucasian", "blond"),
@@ -94,17 +143,19 @@ console.log(player)
 FUNCTIONS
 ============================= */
 const startTutorial = () => {
-    console.log("yerr")
+    console.log("yerr ")
     menu.style.display = "none"
     tutorial.style.display = "block"
-    computedChris = randomizeChris()
-    console.log(computedChris)
+    // computedChris = randomizeChris()
+    // console.log(computedChris)
     // console.log(askButtons)
 
 }
 
 const startGame = () => {
-    console.log("bitchhh")
+    console.log("game startedddd")
+    computedChris = randomizeChris()
+    console.log(computedChris)
     setupGame()
     // console.log(chrises)
    
@@ -125,25 +176,36 @@ const randomizeChris = () =>{
 const makeGuess = () => {
     
     cancelBtn.style.display = "block"
+    
     chrises.forEach((chris) =>{
 
         let chrisLastName = chris.querySelector(".name")
 
         if(player.currentChrises.includes(chris.id)){
-            console.log("this chris is emotionally available")
-            chris.addEventListener('mouseenter', function (){
-                chrisLastName.style.backgroundColor = "#094f8f"
-                chrisLastName.style.color = "aliceblue"
-           })  
-           chris.addEventListener('mouseleave', function (){
-            chrisLastName.style.backgroundColor = "aliceblue"
-            chrisLastName.style.color = "#094f8f"
-       })
+
+            chris.addEventListener('click', function (){
+                player.updateGuessCount()
+                if(computedChris.lastName !== chris.id && player.guessCount === 0){
+                    console.log("you lose")
+                    player.lose()
+
+                }
+                else if(computedChris.lastName === chris.id){
+                    console.log("You win")
+                    player.win()
+
+                }
+                else if (computedChris.lastName !== chris.id && player.guessCount !== 0){
+                   tryModal.style.display = "block"
+
+                }
+            })
             
         }
         else{
-            chrisLastName.style.backgroundColor = "#c7c7c7"
+            // chrisLastName.style.backgroundColor = "#c7c7c7"
             chris.style.backgroundColor = "#c7c7c7"
+            chris.classList.add("no-click")
         }
  
     })
@@ -155,22 +217,29 @@ const cancelGuess = () => {
     chrises.forEach((chris) =>{
 
         let chrisLastName = chris.querySelector(".name")
+        
    
         if(player.currentChrises.includes(chris.id)){
             console.log("this chris is emotionally available")
-
         }
         else{
-            chrisLastName.style.backgroundColor = "#d3232c"
+            // chrisLastName.style.backgroundColor = "#d3232c"
+            chris.classList.remove("no-click")
             chris.style.backgroundColor = "#d3232c"
+            chris.style.color = "aliceblue"
         }
 
     })
+}
+
+const closeModal = () => {
+    tryModal.style.display = "none"
 }
 /* =============================
 EVENT LISTENERS
 ============================= */
 
+closeTryModal.addEventListener("click", closeModal)
 getStartedBtn.addEventListener("click", startTutorial)
 
 startGameBtn.addEventListener("click", startGame)
@@ -181,32 +250,41 @@ cancelBtn.addEventListener("click", cancelGuess)
 
 
 chrises.forEach((chris) =>{
-    chris.addEventListener('dblclick', function(){
-        // console.log("clicked on chris")
+    let chrisLastName = chris.querySelector(".name")
+    if(player.currentChrises.includes(chris.id)){
+        console.log("this chris is emotionally available")
+        chris.addEventListener('mouseenter', function (){
+            chrisLastName.style.backgroundColor = "#094f8f"
+            chrisLastName.style.color = "aliceblue"
+        })  
+        chris.addEventListener('mouseleave', function (){
+            chrisLastName.style.backgroundColor = "aliceblue"
+            chrisLastName.style.color = "#094f8f"
+        })
 
-      
+    }
+    chris.addEventListener('dblclick', function(){
+
         let selectedChris = document.getElementById(chris.id)
         let index = player.currentChrises.indexOf(chris.id)
-        console.log(index)
+      
         let chrisLastName = selectedChris.querySelector(".name")
         let chrisImage = selectedChris.querySelector(".image")
 
-    
-        if(chrisImage.style.display === "none"){
+        
+        if (chrisImage.style.display === "none"){
             chrisImage.style.display = "initial"
             chrisLastName.style.backgroundColor = "aliceblue"
             chrisLastName.style.color = "#094f8f"
             player.currentChrises.push(chris.id)
-            console.log(player.currentChrises)
+            // console.log(player.currentChrises)
             
 
         } 
-        else{
+        else {
             chrisImage.style.display = "none"
-            chrisLastName.style.backgroundColor = "#d3232c"
-            chrisLastName.style.color = "aliceblue"
             player.currentChrises.splice(index,1)
-            console.log(player.currentChrises)
+            // console.log(player.currentChrises)
             
         }
 
@@ -219,13 +297,12 @@ askButtons.forEach((question) =>{
         let selectedQuestion = question.id
         let professions = computedChris.profession
         let selectedButton = document.getElementById(selectedQuestion)
+
         selectedButton.disabled = true
         selectedButton.style.backgroundColor = "#c7c7c7"
         selectedButton.style.color = "#c7c7c7"
         player.updateQuestionCount()
-        console.log(selectedButton)
-        console.log(professions)
-        console.log(selectedQuestion)
+
         
         switch(selectedQuestion){
             case "female":
