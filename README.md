@@ -1,6 +1,6 @@
 # Welcome to Guess Who? Chris, Cris, or Kris Edition
 
-### [https://ma867.github.io/guessWho/](https://en.wikipedia.org/wiki/Guess_Who%3F)
+##[Play the game here!](https://ma867.github.io/guessWho/)
 
 ### Project Description
 This game is an online version of the classic board game, Guess Who?. In the original game, there are two players. Each player gets a board with 24 different characters. The players pick one character on the board, which is kept secret from the other player. The players get to ask each other yes/no questions regarding the appearance of their respective secret character. As questions get asked, the characters get narrowed down and eventually the players are able to make a guess. Whoever guesses first wins. You can read more about the original board game [here.](https://en.wikipedia.org/wiki/Guess_Who%3F)
