@@ -17,7 +17,6 @@ const askButtons = document.querySelectorAll(".ask button")
 const answers = document.querySelector("#answers > span")
 const makeGuessBtn = document.getElementById("make-guess")
 const cancelBtn = document.getElementById("cancel-guess")
-
 const resultTitle = document.getElementById("result-title")
 const scoreNumber = document.getElementById("score-number")
 const scoreText = document.getElementById("score-text")
@@ -77,7 +76,7 @@ class Player{
         resultTitle.textContent = "You Lost"
         scoreText.textContent =  "Better luck next time."
         this.checkScore()
-        this.checkStars()
+        stars.textContent = "☆☆☆"
         modalBackground.style.display = "block"
         updatesModal.style.display = "block"
 
@@ -146,10 +145,6 @@ const startTutorial = () => {
     console.log("yerr ")
     menu.style.display = "none"
     tutorial.style.display = "block"
-    // computedChris = randomizeChris()
-    // console.log(computedChris)
-    // console.log(askButtons)
-
 }
 
 const startGame = () => {
@@ -157,9 +152,6 @@ const startGame = () => {
     computedChris = randomizeChris()
     console.log(computedChris)
     setupGame()
-    // console.log(chrises)
-   
-
 }
 
 const setupGame = () =>{
@@ -197,6 +189,7 @@ const makeGuess = () => {
                 }
                 else if (computedChris.lastName !== chris.id && player.guessCount !== 0){
                    tryModal.style.display = "block"
+                   modalBackground.style.display = "block"
 
                 }
             })
@@ -234,6 +227,7 @@ const cancelGuess = () => {
 
 const closeModal = () => {
     tryModal.style.display = "none"
+    modalBackground.style.display = "none"
 }
 /* =============================
 EVENT LISTENERS
