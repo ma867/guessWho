@@ -377,7 +377,7 @@ askButtons.forEach((question) =>{
                     answers.textContent = "No!"
                 }
                 break
-            case "comedian":
+            case "athlete":
                 console.log("athlete")
                 if(professions.includes("athlete")){
                     answers.textContent = "Yes"

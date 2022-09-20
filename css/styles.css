@@ -251,6 +251,8 @@ body{
 
 .text{
     width:86%;
+    padding-top: 5px;
+    padding-bottom: 5px;
     /* border: solid black 2px; */
     font-family: 12px;
     padding-left:2px;
@@ -281,6 +283,7 @@ button{
 }
 
 .ask button{
+    margin-top: 0px;
     border-radius: 50%;
 }
 
