@@ -87,14 +87,14 @@ class Player{
 
     }
     checkStars(){
-        if(this.questionCount < 5){
+        if(this.questionCount < 6){
             
             stars.textContent = "★★★"
         }
-        else if(this.questionCount >=5 && this.questionCount<=10){
+        else if(this.questionCount >=6 && this.questionCount<=11){
             stars.textContent = "★★☆"
         }
-        else if(this.questionCount >=11 && this.questionCount<=15){
+        else if(this.questionCount >=12 && this.questionCount<=16){
             stars.textContent = "★☆☆"
         }
         else{
@@ -371,6 +371,15 @@ askButtons.forEach((question) =>{
             case "comedian":
                 console.log("comedian")
                 if(professions.includes("comedian")){
+                    answers.textContent = "Yes"
+                }
+                else{
+                    answers.textContent = "No!"
+                }
+                break
+            case "comedian":
+                console.log("athlete")
+                if(professions.includes("athlete")){
                     answers.textContent = "Yes"
                 }
                 else{
