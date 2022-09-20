@@ -8,14 +8,8 @@ body{
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
 }
-/* .board{
-    border: solid black 2px;
-    
-} */
-
 
 .instruction{
-
     counter-reset: my-awesome-counter;
   }
 .instruction p {
@@ -29,32 +23,18 @@ body{
     font-family: Jacoby;
   }
 .welcome{
-    
-    /* border: solid black 2px; */
-    justify-content: center;
-    /* margin-top: 10%;
-    margin-bottom: 10%; */
-    /* height:50%; */
-    
-    
+    justify-content: center; 
+    /* margin-top:150px; */
 }
-.menu{
-    /* display: none; */
+.welcome img{
+    margin-top: 150px;
 }
-.tutorial{
-    /* border: solid black 2px; */
-    
-}
+
 .instructions{
     display: none;
-    /* border: solid black 2px; */
-  
     justify-content: center;
 }
 .updates{
-  
-    /* border: solid black 2px; */
-  
     justify-content: center;
 }
 .modal-background{
@@ -72,7 +52,7 @@ body{
 }
 .titles{
     font-family: Jacoby;
-    color: #094f8f;
+    color: #d3232c;
     /* border: solid black 2px; */
     font-size: 18px;
     text-align: center;
@@ -85,56 +65,36 @@ body{
   
 }
 
-
-
 #modal-textbox{
-    display: none;
-  border: 20px solid white;
+  display: none;
+  padding: 20px;;
   background-color: white;
   box-shadow: 0px 0px 2px 2px #00222222;
   height: 100%;
   width: 70%;
-
-  justify-content: center;
-  /* border: solid black 2px; */
-  /* margin: 150px auto; */
   border-radius: 5px;
-  /*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally).*/
-  
-  /*This will give the box some depth.*/
-  /* padding: 5%; */
   text-align: center;
 }
 
 #updates-textbox, #try-textbox{
-    /* display: none; */
-    /* border: 2px solid black; */
     background-color: white;
     box-shadow: 0px 0px 2px 2px #00222222;
     width: 50%;
+    
     position: fixed; /* or absolute */
     top: 20%;
     left: 25%;
     right: 25%;
-    /* margin-top: -50px;
-    margin-left: -100px; */
-    /* justify-content: center; */
-    /* border: solid black 2px; */
-    /* margin: 150px auto; */
     border-radius: 5px;
-    /*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally).*/
-    
-    /*This will give the box some depth.*/
-    /* padding: 5%; */
     text-align: center;
 
 }
 #updates-textbox{
-    height: 60%;
+    height: 250px;
     display: none;
 }
 #try-textbox{
-    height: 40%;
+    height: 200px;
     display: none;
 
 }
@@ -150,14 +110,14 @@ body{
     font-size: 20px;
     font-family: Jacoby;
     cursor: pointer;
+    padding: 10px;
 }
-
-
 
 #chris-board,#game-controls{
     /* border: solid black 2px; */
     border-radius: 5px;
     display: none;
+    height: 720px;
     
 }
 
@@ -165,10 +125,8 @@ body{
     flex-basis: 66%;
     margin-right: 1%;
     flex-direction: column;
-    /* height: 80%; */
-    
-    /* flex-direction: column; */
 }
+
 #game-controls{
     flex-basis: 33%;
     flex-direction: column;
@@ -176,39 +134,38 @@ body{
     background-color: aliceblue;
 }
 #logo{
- 
     width: 90%;
     height: 25%;
-    /* border: solid blue 2px; */
+    margin-top: 5%;
     margin-left: 5%;
     margin-right: 5%;
-    /* align-items: center; */
-
 }
+
 #logo img{
     width:100%;
     max-height: 100%;
-    
     justify-content: center;
 }
+
 .player-stats, #answers{
     flex-direction: column;
     font-size: 18px;
     width: 95%;
-    /* border: solid blue 2px; */
     height: 6%;
     margin-left: 2.5%;
     margin-right: 2.5%;
 }
+
 #guess-count, #question-count, #answers{
     font-family: Jacoby;
     color: #d3232c;
 }
+
 #guess-count > span, #question-count > span, #answers > span{
     justify-content: right;
     color: black;
-    /* font-family: Montserrat; */
 }
+
 #answers{
     text-align: center;
     padding-top: 2%;
@@ -219,47 +176,35 @@ body{
 }
 
 .questions{
-
     flex-direction: column;
     box-shadow: 0px 0px 2px 2px #00222222;
     width: 95%;
-
-    /* justify-content: center; */
-    
     margin-left:2.5%;
     margin-right:2.5%;
     margin-top: 2%;
-    /* border: solid red 2px; */
     display: block;
     border-radius: 5px;
-   /*  */
     overflow: auto;
     height: 30%;
 }
 .questions::-webkit-scrollbar {
     width: 5px;
     height: 8px;
-    background-color: #f9f9f9; /* or add it to the track */
+    background-color: #f9f9f9; 
     border-radius: 5px;
   }
   
-  /* Add a thumb */
   .questions::-webkit-scrollbar-thumb {
     background-color: #c7c7c7;
     border-radius: 5px;
     height: 2px;
   }
 
-/* .row{
-    flex-direction: row;
-} */
 .row{
-    
     margin-bottom: .5%;
 }
 .row:first-of-type{
     margin-top: .5%;
-
 }
 .square{
     /* border: solid black 2px; */
@@ -271,7 +216,6 @@ body{
     border-radius: 5px;
     box-shadow: 0px 0px 2px 2px #00222222;
     background-color: #d3232c;
-
 }
 
 .square:first-of-type{
@@ -305,7 +249,6 @@ body{
     display: flex;
 }
 
-
 .text{
     width:86%;
     /* border: solid black 2px; */
@@ -324,12 +267,10 @@ body{
 .ask{
     width: 14%;
     /* border: solid black 2px; */
-    
-
 }
 
-
 button{
+    margin-top: 10px;
     border-color: transparent;
     cursor: pointer;
     background-color: #094f8f;
@@ -341,10 +282,7 @@ button{
 
 .ask button{
     border-radius: 50%;
- 
-
 }
-
 
 .guess{
     width: 95%;
@@ -360,8 +298,6 @@ button{
     width: 100%;
     border-radius: 5px;
     font-size: 24px;
-
-
 
 }
 #cancel-guess{
@@ -400,17 +336,20 @@ button{
     font-family: Jacoby;
     font-size: 30px;
 }
-#result-title{
+#result-title, #try-title{
     color: #d3232c;
     font-family: Jacoby;
     font-size: 40px;
+    padding: 10px;
 }
+
 #score-number{
     color: #094f8f;
     font-family: Jacoby;
     font-size: 50px;
 
 }
+
 #score-text{
     font-size: 20px;
 

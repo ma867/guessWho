@@ -162,6 +162,8 @@ const setupGame = () =>{
 }
 
 const randomizeChris = () =>{
+    console.log(Math.floor(Math.random() * 24))
+    console.log("yerrrr")
     return  chrisList[Math.floor(Math.random() * 24)];
 }
 
@@ -229,6 +231,11 @@ const closeModal = () => {
     tryModal.style.display = "none"
     modalBackground.style.display = "none"
 }
+
+const restartGame = () => {
+    window.location.reload();
+}
+
 /* =============================
 EVENT LISTENERS
 ============================= */
@@ -241,6 +248,8 @@ startGameBtn.addEventListener("click", startGame)
 makeGuessBtn.addEventListener("click", makeGuess)
 
 cancelBtn.addEventListener("click", cancelGuess)
+
+playAgain.addEventListener("click", restartGame)
 
 
 chrises.forEach((chris) =>{
